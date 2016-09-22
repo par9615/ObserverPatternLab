@@ -6,9 +6,11 @@ import mx.iteso.observer.Scorer;
 import mx.iteso.observer.Subject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class StoreMonitorDisplay implements Observer, Displayable {
+/**
+ * Created by Erick on 22/09/2016.
+ */
+public class MobileAppDisplay implements Observer, Displayable {
     private String homeTeam;
     private String awayTeam;
     private int homeGoals;
@@ -17,10 +19,10 @@ public class StoreMonitorDisplay implements Observer, Displayable {
     private ArrayList<Scorer> scorers;
     private String typeOfDisplay;
 
-    public StoreMonitorDisplay(Subject scoresData){
+    public MobileAppDisplay(Subject scoresData) {
         this.scoresData = scoresData;
         this.scoresData.registerObserver(this);
-        typeOfDisplay = "Store Monitor Display";
+        typeOfDisplay = "Mobile App Display";
     }
 
     public void display() {
@@ -41,5 +43,4 @@ public class StoreMonitorDisplay implements Observer, Displayable {
         this.scorers = scorers;
         display();
     }
-
 }
