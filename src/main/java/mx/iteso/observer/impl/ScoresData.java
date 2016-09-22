@@ -29,7 +29,7 @@ public class ScoresData implements Subject {
 
     public void notifyObservers() {
         for (Observer observer : observers) {
-            observer.update(this.homeTeam, this.awayTeam, this.homeGoals, this.awayGoals);
+            observer.update(this.homeTeam, this.awayTeam, this.homeGoals, this.awayGoals, this.scorers);
         }
     }
 
@@ -37,11 +37,12 @@ public class ScoresData implements Subject {
         notifyObservers();
     }
 
-    public void setScore( String homeTeam, String awayTeam, int homeGoals, int awayGoals){
+    public void setScore( String homeTeam, String awayTeam, int homeGoals, int awayGoals, ArrayList<Scorer> scorers){
         this.homeTeam = homeTeam;
         this.awayTeam =  awayTeam;
         this.homeGoals = homeGoals;
         this.awayGoals = awayGoals;
+        this.scorers = scorers;
         newScore();
     }
 
