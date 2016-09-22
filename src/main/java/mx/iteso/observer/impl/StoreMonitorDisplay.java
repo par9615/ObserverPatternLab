@@ -20,6 +20,8 @@ public class StoreMonitorDisplay implements Observer, Displayable {
         System.out.println("Latest score is:");
         System.out.println(homeTeam + " (HOME) " + homeGoals + " - "
                 + awayTeam + " (AWAY) " + awayGoals);
+
+
     }
 
     public void update(String home, String away, int homeGoals, int awayGoals) {
