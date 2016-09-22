@@ -46,7 +46,7 @@ public class ScoresData implements Subject {
         newScore();
     }
 
-    public void addScorer(String name, int number, int position, String team){
+    public void addScorer(String name, int number, String position, String team){
         scorers.add(new Scorer(name, number, position, team));
     }
 }

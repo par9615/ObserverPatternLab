@@ -4,12 +4,12 @@ package mx.iteso.observer;
  * Created by simio on 22/09/2016.
  */
 public class Scorer {
-    public String name;
-    public int number;
-    public int position;
-    public String team;
+    private String name;
+    private int number;
+    private String position;
+    private String team;
 
-    public Scorer(String name, int number, int position, String team){
+    public Scorer(String name, int number, String position, String team){
         this.name = name;
         this.number = number;
         this.position = position;
@@ -33,11 +33,11 @@ public class Scorer {
         this.number = number;
     }
 
-    public int getPosition() {
+    public String getPosition() {
         return position;
     }
 
-    public void setPosition(int position) {
+    public void setPosition(String position) {
         this.position = position;
     }
 
