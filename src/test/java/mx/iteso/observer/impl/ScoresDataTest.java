@@ -1,8 +1,12 @@
 package mx.iteso.observer.impl;
 
 import mx.iteso.observer.Observer;
+import mx.iteso.observer.Scorer;
+import mx.iteso.observer.ScorerGenerator;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.mock;
@@ -29,7 +33,8 @@ public class ScoresDataTest {
     public void testSetScore() {
         scoresData.registerObserver(observer);
         scoresData.registerObserver(observer);
-        scoresData.setScore("testTeam", "testTeam2", 1, 0);
-        verify(observer, times(2)).update("testTeam", "testTeam2", 1, 0);
+        ArrayList<Scorer> scorers = ScorerGenerator.generateArray(1+0);
+        scoresData.setScore("testTeam", "testTeam2", 1, 0, scorers);
+        verify(observer, times(2)).update("testTeam", "testTeam2", 1, 0, scorers);
     }
 }
